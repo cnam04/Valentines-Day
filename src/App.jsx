@@ -31,10 +31,6 @@ function App() {
         <YesButton onYes={handleYes} />
         <MovingButton />
         <Popup open={open} onClose={() => setOpen(false)}>
-          <h2 style={{ margin: 0 }}>YAYYYY!!! I LOVE YOU 💖</h2>
-          <p style={{ marginTop: 10 }}>
-            You just made my whole day 😭✨
-          </p>
         </Popup>
         </div>
     </>

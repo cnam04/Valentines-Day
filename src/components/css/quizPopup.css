@@ -1,31 +1,37 @@
 .quiz-background {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(80, 10, 40, 0.45);
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
-    z-index: 40;
+    z-index: 1100;
+    animation: fadeIn 0.25s ease;
 }
 
 .quiz-card {
     width: min(900px, 92vw);
     height: min(82vh, 760px);
-    background: #fff4f8;
+    background: linear-gradient(170deg, #fff8fb 0%, #fff0f5 100%);
     border-radius: 24px;
     padding: 32px 32px 24px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 24px 60px rgba(140, 20, 60, 0.22);
+    border: 2px solid #f5c0d8;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    animation: slideUp 0.35s ease;
 }
 
 .quiz-card h1 {
     margin: 0 0 16px;
     text-align: center;
-    color: #4d0f2d;
+    color: #b8235a;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
 }
 
 .quiz-questions {
@@ -52,10 +58,10 @@
 }
 
 .quiz-question {
-    background: #ffffff;
+    background: #fff;
     border-radius: 18px;
     padding: 16px 20px;
-    border: 2px solid transparent;
+    border: 2px solid #f5dce8;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -72,7 +78,9 @@
 .quiz-question-title {
     margin: 0 0 12px;
     font-size: 1.1rem;
-    color: #3a0f2b;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #6b2040;
 }
 
 .quiz-options {
@@ -122,7 +130,9 @@
 }
 
 .quiz-option-text {
-    color: #4a1230;
+    color: #6b2040;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
 }
 
 .quiz-result {
@@ -141,19 +151,26 @@
 .quiz-check-btn {
     margin-top: 18px;
     align-self: center;
-    padding: 12px 30px;
+    padding: 12px 34px;
     border: none;
     border-radius: 999px;
-    background: #d23b79;
+    background: linear-gradient(135deg, #e84393, #d23b79);
     color: #fff;
+    font-family: 'Nunito', sans-serif;
     font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 6px 20px rgba(210, 59, 121, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .quiz-check-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px rgba(210, 59, 121, 0.25);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 10px 28px rgba(210, 59, 121, 0.4);
+}
+
+.quiz-check-btn:active {
+    transform: scale(0.96);
 }
 
 @media (max-width: 640px) {

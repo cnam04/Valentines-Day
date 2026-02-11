@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './app.css'
 import uwu from './assets/herve-for-me.gif'
 import MovingButton from './components/movingButton'
 import YesButton from './components/yesButton'
@@ -25,14 +26,16 @@ function App() {
   return (
     <>
       <HeartsRain active={heartsOn}></HeartsRain>
-      <h1>Will you be my valentine????</h1>
-        <img src={uwu} alt="fingers together" style={{ width: 300 }} />
-        <div>
-        <YesButton onYes={handleYes} />
-        <MovingButton />
+      <div className="landing">
+        <h1 className="landing-title">Will you be my valentine???? 💝</h1>
+        <img className="landing-gif" src={uwu} alt="fingers together" />
+        <div className="landing-buttons">
+          <YesButton onYes={handleYes} />
+          <MovingButton />
+        </div>
         <Popup open={open} onClose={() => setOpen(false)}>
         </Popup>
-        </div>
+      </div>
     </>
   )
 }

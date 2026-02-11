@@ -20,7 +20,7 @@ export default function Popup({ open, onClose, children }) {
           <p style={{ marginTop: 10 }}>
             You just made my day 😭✨
           </p>
-          <p>Take this quiz to see how much you love me:</p>
+          <p>Take this relationship quiz:</p>
         <button className = "quiz-btn" onClick={() => setQuizOpen(true)}> 
         Quiz
         </button>

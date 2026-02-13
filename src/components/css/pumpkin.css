@@ -1,0 +1,17 @@
+.pumpkinOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;            /* above everything */
+  display: grid;
+  place-items: center;
+  background: transparent;  /* overlay is invisible */
+}
+
+/* your hammer cursor */
+.smashTarget {
+  cursor: url("/hammer-cursor.png") 12 12, pointer;
+}
+
+.smashTarget:active {
+  cursor: url("/hammer-cursor-down.png") 12 12, pointer;
+}

@@ -9,9 +9,9 @@
 
 /* your hammer cursor */
 .smashTarget {
-  cursor: url("/hammer-cursor.png") 12 12, pointer;
+  cursor: url("../../assets/hammer-64.png") 12 12, pointer;
 }
 
 .smashTarget:active {
-  cursor: url("/hammer-cursor-down.png") 12 12, pointer;
+  cursor: url("../../assets/hammer-down-64.png") 12 12, pointer;
 }

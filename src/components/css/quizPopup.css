@@ -95,7 +95,7 @@
     padding: 10px 12px;
     border-radius: 14px;
     background: #fff8fb;
-    cursor: pointer;
+    cursor: url("../../assets/heart-cursor-32.png") 16 13, pointer;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -159,7 +159,7 @@
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    cursor: pointer;
+    cursor: url("../../assets/heart-cursor-32.png") 16 13, pointer;
     box-shadow: 0 6px 20px rgba(210, 59, 121, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

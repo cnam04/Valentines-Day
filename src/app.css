@@ -11,6 +11,21 @@
   padding: 0;
 }
 
+html, body, #root {
+  cursor: url("./assets/heart-cursor-32.png") 16 13, auto;
+}
+html, body, #root:active {
+  cursor: url("./assets/heart-cursor-24.png") 16 13, auto;
+}
+
+/* heart cursor on every element (pumpkin overrides via .smashTarget) */
+*:not(.smashTarget) {
+  cursor: url("./assets/heart-cursor-32.png") 16 13, auto;
+}
+*:not(.smashTarget):active {
+  cursor: url("./assets/heart-cursor-24.png") 16 13, auto;
+}
+
 body {
   font-family: 'Nunito', 'Segoe UI', sans-serif;
   min-height: 100vh;
@@ -80,7 +95,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
-  cursor: pointer;
+  cursor: url("./assets/heart-cursor-32.png") 16 13, pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
   letter-spacing: 0.5px;
 }

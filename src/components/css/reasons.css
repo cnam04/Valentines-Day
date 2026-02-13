@@ -231,3 +231,20 @@
     font-size: 0.95rem;
   }
 }
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #b8235a;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: #e84393;
+  transform: translateX(-3px);
+}

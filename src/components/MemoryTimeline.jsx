@@ -1,39 +1,89 @@
 import { useState } from 'react'
 import './css/memoryTimeline.css'
 import './css/reasons.css'
-import pumpkinImg from '../assets/pumpkin_left_v3.png'
+
+import img0 from '../assets/memories/IMG_1029.png'
+import img1 from '../assets/memories/IMG_5229.png'
+import img2 from '../assets/memories/IMG_5311.png'
+import img3 from '../assets/memories/IMG_5353.png'
+import img4 from '../assets/memories/IMG_5575.png'
+import img5 from '../assets/memories/IMG_5608.png'
+import img6 from '../assets/memories/IMG_5651.png'
+import img7 from '../assets/memories/IMG_5836.png'
+import img8 from '../assets/memories/IMG_5861.png'
+import img9 from '../assets/memories/IMG_6298.png'
+import img10 from '../assets/memories/IMG_6307.png'
+import img11 from '../assets/memories/IMG_6322.png'
+import img12 from '../assets/memories/IMG_6377.png'
+import img13 from '../assets/memories/IMG_6404.png'
+import img14 from '../assets/memories/223194BA-80AB-4DF9-A4B0-6BC611FCFFDB_1_102_o.jpeg'
+import final from '../assets/memories/final.png'
 
 const memories = [
   {
-    image: pumpkinImg,
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras vehicula, mi eget laoreet varius, libero erat pellentesque nulla.',
+    image: img0,
+    description: 'I love to go to freaky weirdo parties with you <3',
   },
   {
-    image: pumpkinImg,
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.',
+    image: img1,
+    description: 'Epic hiking/scrambling/backgammon/picnic date',
   },
   {
-    image: pumpkinImg,
-    description:
-      'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+    image: img2,
+    description: 'I had so much fun this day with you. It was so fun to show you bouldering outside for the first time :)',
   },
   {
-    image: pumpkinImg,
-    description:
-      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.',
+    image: img3,
+    description: 'It was so cute when you met Emi for the first time. Even though you weren\t expecting to... YASMINT',
   },
   {
-    image: pumpkinImg,
-    description:
-      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.',
+    image: img4,
+    description: 'Thanks for putting up with my stupidity :P. Having you there on my birthday was so special.',
+  },
+    {
+    image: img5,
+    description: 'I love eating good food and listening to good music with you. BEST. BIRTHDAY. EVER.',
   },
   {
-    image: pumpkinImg,
-    description:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.',
+    image: img6,
+    description: 'I love our cuddles',
   },
+  {
+    image: img7,
+    description: 'CHILIIIISSSSSSS',
+  },
+  {
+    image: img8,
+    description: 'Late night froyo runs.... PAST COLE ASKS FUTURE COLE AND YASEMIN IF WE CAN GET FROYO TN',
+  },
+  {
+    image: img9,
+    description: 'I love to travel the world and see its beauty with you',
+  },
+  {
+    image: img10,
+    description: 'You were eating here so I had to add this in hehe',
+  },
+  {
+    image: img11,
+    description: 'I love falling asleep with you. SORRYYYYYYY',
+  },
+  {
+    image: img12,
+    description: 'Thanks for standing outside with me when my car broke down....',
+  },
+  {
+    image: img13,
+    description: 'I love to be a biggie with you',
+  },
+  {
+    image: img14,
+    description: 'I had so much fun at this bar with you :)',
+  },
+  {
+    image: final,
+    description: 'This wasn\'t everything, but these are some of my favs with you. I hope we can make a million more. I love you so much <3'
+  }
 ]
 
 export default function MemoryTimeline() {

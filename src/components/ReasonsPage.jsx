@@ -5,11 +5,11 @@ import crumpledImg from '../assets/transp-crumpled.png'
 import uncrumpledImg from '../assets/transp-uncrumpled.png'
 
 const reasons = [
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
-  'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-  'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.',
-  'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
-  'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
+  'You\'re always so thoughtful. I\'ll never be able to give gifts like you, or plan like you, or think of others like you.',
+  'You\'re forgiving. You put up with me through my worst, and always think of my best. Thank you for that.',
+  'You\'re weird. I love being silly with you and watching lego ninjago and making poo jokes.',
+  'You\'re self aware. I love that you\'re always willing to change, and see the other perspective on things I hope I can be like that to you.',
+  'You treat others with kindness and respect, and you are always nice to people. I love that about you.',
 ]
 
 /* randomised positions & rotations so the balls look natural inside the jar */

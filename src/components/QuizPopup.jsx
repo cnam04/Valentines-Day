@@ -123,9 +123,19 @@ export default function QuizPopup({ open, onQuizClose }) {
                     })}
                 </div>
 
-                <button className="quiz-check-btn" onClick={handleCheckQuiz}>
-                    Check Quiz
-                </button>
+                <div className="quiz-bottom-buttons">
+                    <button className="quiz-check-btn" onClick={handleCheckQuiz}>
+                        Check Quiz
+                    </button>
+                    {checked && (
+                        <button
+                            className="quiz-check-btn quiz-memories-btn"
+                            onClick={() => window.location.href = '/memory-timeline.html'}
+                        >
+                            Memories →
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     );

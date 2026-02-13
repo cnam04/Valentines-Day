@@ -1,0 +1,249 @@
+/* ── Memory Timeline Page ── */
+
+/* ── Page layout ── */
+.timeline-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 24px 60px;
+  position: relative;
+}
+
+/* ── Back link ── */
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #b8235a;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: #e84393;
+  transform: translateX(-3px);
+}
+
+/* ── Title ── */
+.timeline-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 800;
+  color: #b8235a;
+  text-shadow: 0 2px 12px rgba(210, 59, 121, 0.18);
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  margin-bottom: 36px;
+  animation: titlePulse 2.5s ease-in-out infinite;
+}
+
+/* ── Carousel container ── */
+.timeline-carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* ── Arrow buttons ── */
+.carousel-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 2.5px solid #f0a0c4;
+  border-radius: 50%;
+  background: #fff;
+  color: #d23b79;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  display: grid;
+  place-items: center;
+  cursor: url("../../assets/heart-cursor-32.png") 16 13, pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(210, 59, 121, 0.12);
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: #fff0f5;
+  border-color: #e874a4;
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(210, 59, 121, 0.22);
+}
+
+.carousel-arrow:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Viewport (clip area for slide animation) ── */
+.carousel-viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* ── Memory card ── */
+.memory-card {
+  width: 100%;
+  background: linear-gradient(170deg, #fff8fb 0%, #fff0f5 100%);
+  border-radius: 24px;
+  border: 2px solid #f5c0d8;
+  box-shadow: 0 12px 40px rgba(140, 20, 60, 0.14);
+  overflow: hidden;
+}
+
+.memory-card.card-active {
+  position: relative;
+}
+
+.memory-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid #f5c0d8;
+}
+
+.memory-card__text {
+  padding: 20px 24px;
+}
+
+.memory-card__text p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #6b2040;
+  margin: 0;
+}
+
+/* ── Slide animations ── */
+
+/* Exit: slide current card out to the left */
+.slide-out-left {
+  animation: slideOutLeft 0.4s ease forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+}
+
+/* Exit: slide current card out to the right */
+.slide-out-right {
+  animation: slideOutRight 0.4s ease forwards;
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+}
+
+/* Enter: slide new card in from the right */
+.slide-in-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slideInRight 0.4s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Enter: slide new card in from the left */
+.slide-in-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ── Dots indicator ── */
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f0a0c4;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.carousel-dot--active {
+  background: #d23b79;
+  transform: scale(1.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .timeline-page {
+    padding: 32px 12px 48px;
+  }
+
+  .timeline-carousel {
+    gap: 8px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .memory-card__text {
+    padding: 16px 18px;
+  }
+
+  .back-link {
+    top: 16px;
+    left: 16px;
+  }
+}

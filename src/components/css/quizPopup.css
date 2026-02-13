@@ -148,8 +148,14 @@
     color: #cf2f2f;
 }
 
-.quiz-check-btn {
+.quiz-bottom-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
     margin-top: 18px;
+}
+
+.quiz-check-btn {
     align-self: center;
     padding: 12px 34px;
     border: none;

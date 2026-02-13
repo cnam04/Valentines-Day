@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import nonSmashed from "../assets/pumpkin_left_v3.png";
 import lightlySmashed from "../assets/pumpkin_middle_v3.png";
 import smashed from "../assets/pumpkin_right_v3.png";
+import transp from "../assets/transparent.png"
 import './css/pumpkin.css'
 // You can keep "transp" if you want, but you don't need it anymore.
 // import transp from "../assets/transparent.png";
 
-const frames = [nonSmashed, lightlySmashed, smashed];
+const frames = [nonSmashed, lightlySmashed, smashed, transp];
 
 export default function SmashingPumpkin({ onDone }) {
   const [idx, setIdx] = useState(0);
@@ -22,7 +23,7 @@ export default function SmashingPumpkin({ onDone }) {
     if (idx === lastIdx) {
       const t = setTimeout(() => {
         onDone?.(); // tell parent to hide this component
-      }, 500); // small delay so user sees the final frame
+      }, ); // small delay so user sees the final frame
       return () => clearTimeout(t);
     }
   }, [idx, lastIdx, onDone]);

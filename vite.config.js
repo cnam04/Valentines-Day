@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         'memory-timeline': resolve(__dirname, 'memory-timeline.html'),
+        reasons: resolve(__dirname, 'reasons.html'),
       },
     },
   },

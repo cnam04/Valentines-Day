@@ -1,0 +1,233 @@
+/* ── Reasons I Love You Page ── */
+
+/* ── Page layout ── */
+.reasons-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 24px 60px;
+  position: relative;
+}
+
+/* ── Title ── */
+.reasons-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 800;
+  color: #b8235a;
+  text-shadow: 0 2px 12px rgba(210, 59, 121, 0.18);
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  animation: titlePulse 2.5s ease-in-out infinite;
+}
+
+.reasons-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b2040;
+  margin-bottom: 28px;
+}
+
+/* ── Jar wrapper (contains jar image + ball overlays) ── */
+.jar-wrapper {
+  position: relative;
+  width: min(360px, 80vw);
+  display: flex;
+  justify-content: center;
+}
+
+.jar-img {
+  width: 150%;
+  height: auto;
+  display: block;
+  
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Ball container (overlaid on top of the jar) ── */
+.jar-balls {
+  position:calc(1000);
+  inset: 0;
+  pointer-events: none;         /* let clicks pass through to buttons */
+}
+
+/* ── Individual crumpled ball ── */
+.crumpled-ball {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  pointer-events: all;
+  cursor: url("../../assets/heart-cursor-32.png") 16 13, pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  transform-origin: center center;
+  animation: ballIdle 3s ease-in-out infinite;
+}
+
+.crumpled-ball:nth-child(2) { animation-delay: 0.4s; }
+.crumpled-ball:nth-child(3) { animation-delay: 0.8s; }
+.crumpled-ball:nth-child(4) { animation-delay: 1.2s; }
+.crumpled-ball:nth-child(5) { animation-delay: 1.6s; }
+
+@keyframes ballIdle {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50%      { transform: translateY(-4px) rotate(var(--r, 0deg)); }
+}
+
+.crumpled-ball img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.crumpled-ball:hover {
+  transform: scale(1.18) translateY(-4px);
+  filter: brightness(1.1) drop-shadow(0 4px 12px rgba(210, 59, 121, 0.35));
+}
+
+.crumpled-ball:active {
+  transform: scale(0.92);
+}
+
+/* ── Uncrumpled overlay ── */
+.uncrumpled-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(80, 10, 40, 0.5);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.uncrumpled-container {
+  position: relative;
+  width: min(520px, 88vw);
+  animation: paperUnfold 0.45s ease;
+}
+
+@keyframes paperUnfold {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-6deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.uncrumpled-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 48px rgba(100, 20, 50, 0.3));
+  user-select: none;
+}
+
+/* ── Text overlaid on the paper ── */
+.uncrumpled-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68%;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1rem, 3.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.6;
+  color: #5c1a34;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  background-color: #ffffff83;
+
+}
+
+/* ── Close button on uncrumpled paper ── */
+.uncrumpled-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: none;
+  background: #fde2ed;
+  color: #b8235a;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: url("../../assets/heart-cursor-32.png") 16 13, pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(140, 20, 60, 0.2);
+}
+
+.uncrumpled-close:hover {
+  background: #f5a0c0;
+  color: #fff;
+  transform: scale(1.12);
+}
+
+/* ── "All done" message ── */
+.reasons-done {
+  margin-top: 32px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #b8235a;
+  animation: titlePulse 2.5s ease-in-out infinite;
+}
+
+/* ── Nav link (top-right, used on memory-timeline page) ── */
+.nav-link-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #b8235a;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link-right:hover {
+  color: #e84393;
+  transform: translateX(3px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .reasons-page {
+    padding: 32px 16px 48px;
+  }
+
+  .crumpled-ball {
+    width: 46px;
+    height: 46px;
+  }
+
+  .uncrumpled-text {
+    width: 74%;
+    font-size: 0.95rem;
+  }
+}

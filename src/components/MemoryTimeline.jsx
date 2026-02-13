@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './css/memoryTimeline.css'
+import './css/reasons.css'
 import pumpkinImg from '../assets/pumpkin_left_v3.png'
 
 const memories = [
@@ -69,6 +70,7 @@ export default function MemoryTimeline() {
   return (
     <div className="timeline-page">
       <a href="/" className="back-link">← Back</a>
+      <a href="/reasons.html" className="nav-link-right">Reasons I Love You →</a>
       <h1 className="timeline-title">Our Memories Together 💕</h1>
 
       <div className="timeline-carousel">
